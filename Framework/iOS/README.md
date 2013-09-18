@@ -1,30 +1,30 @@
 PixateFramework
 ===============
 
-Style your entire iOS app dynamically with native CSS
+Style your entire iOS app dynamically with native CSS.
 
-# Getting Started with Pixate Engine for iOS
+# Getting Started with Pixate for iOS
 
-Thank you for using Pixate Engine for iOS.  This guide will help you get started.
+Thank you for using Pixate for iOS.  This guide will help you get started.
 
 If you have already created a project using Pixate 1.0, this [transition guide](http://cdn.pixate.com/docs/engine/ios/2.0RC1/1-2-transition-guide.html) will help you migrate your project to Pixate 2.0.
 
-**CocoaPods Users:** Skip the installation instructions and start [here](#license).
+**CocoaPods Users:** Skip the installation instructions and start [here](#enabling-pixate-and-setting-your-pixate-license).
 
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Installing Pixate Engine for iOS](#installation)
-* [Adding the Pixate Engine to a New Project](#new_project)
-* [Adding the Pixate Engine to an Existing Project](#existing_project)
-	* [Adding the CoreText and QuartzCore Libraries](#linked-libraries)
-	* [Enabling Pixate and Setting Your Pixate License](#license)
-* [Getting Started Video](#getting_started_video)
-* [Install the Playground App](#install_playground)
-* [Sample Applications](#sample_applications)
-* [Real-time App Styling](#real-time_app_styling)
-* [Styling Using Code](#code_only)
-* [Pixate Resources](#resources)
+* [Installing Pixate for iOS](#installing-pixate-for-ios)
+* [Adding Pixate to a New Project](#adding-pixate-to-a-new-project)
+* [Adding Pixate to an Existing Project](#adding-pixate-to-an-existing-project)
+    * [Adding the CoreText and QuartzCore Libraries](#adding-the-coretext-and-quartzcore-libraries)
+    * [Enabling Pixate and Setting Your Pixate License](#enabling-pixate-and-setting-your-pixate-license)
+* [Getting Started Video](#getting-started-video)
+* [Install the Playground App](#install-the-playground-app)
+* [Sample Applications](#sample-applications)
+* [Real-time App Styling](#real-time-app-styling)
+* [Styling Using Code](#styling-using-code)
+* [Pixate Resources](#pixate-resources)
 
 ## <a id="introduction"></a>Introduction
 
@@ -42,7 +42,7 @@ for a complete list of controls and properties.
   To experience the power of Pixate you'll need to use Xcode 4.5 or
 later, and iOS 5.1 or 6.
 
-## <a id="installation"></a>Installing Pixate Engine for iOS
+## <a id="installing-pixate-for-ios"></a>Installing Pixate for iOS
 
 If you haven't already, [download](http://download.pixate.com) Pixate. You'll also need a [license key](http://download.pixate.com/key). Don't worry. **It's free!**
 
@@ -50,14 +50,13 @@ After opening the installer, simply copy the Pixate folder to a convenient locat
 Pixate folder contains the Pixate framework, a link to the online
 documentation center, and sample applications.
 
-Next we'll add Pixate to a new project or you can jump to the
-[next section](#existing_project) to start with an existing project.
-
-## <a id="new_project"></a>Adding the Pixate Engine to a New Project
+## <a id="adding-pixate-to-a-new-project"></a>Adding Pixate to a New Project
 
 Let's create a simple iPhone project using the Pixate framework. In
 XCode, select New->Project... For this demo, we're using a "Single
 View Application".
+
+If you already have an existing project, jump to the [next section](#adding-pixate-to-an-existing-project).
 
 ![Single View Application](http://cdn.pixate.com/docs/engine/ios/2.0RC1/images/single_view_application.png)
 
@@ -70,7 +69,7 @@ wherever you would like.
 
 ![Project Details](http://cdn.pixate.com/docs/engine/ios/2.0RC1/images/project_details.png)
 
-## <a id="existing_project"></a>Adding the Pixate Engine to an Existing Project
+## <a id="adding-pixate-to-an-existing-project"></a>Adding Pixate to an Existing Project
 
 Select the xib file for your project.  Access the Utilities area and
 ensure that the Autolayout setting in the Interface Builder Document
@@ -102,7 +101,7 @@ click on the 'All' selection next to the 'Basic' selection.) Now type
 
 ![Set Linker Flag](http://cdn.pixate.com/docs/engine/ios/2.0RC1/images/set_linker_flags.png)
 
-## <a id="linked-libraries"></a> Adding the CoreText and QuartzCore Libraries
+## <a id="adding-the-coretext-and-quartzcore-libraries"></a> Adding the CoreText and QuartzCore Libraries
 
 Before you use Pixate, a couple of Apple libraries need to be added to your project. These libraries, **CoreText.framework** and **QuartzCore.framework**, can be added by clicking on the project icon in the source list, and scrolling down to the **Linked Frameworks and Libraries** section.
 
@@ -126,17 +125,17 @@ You should now see both frameworks added to the **Linked Frameworks and Librarie
 
 ![You win at adding frameworks!](http://cdn.pixate.com/docs/engine/ios/2.0RC1/images/LinkedFrameworks-5.png)
 
-## <a id="license"></a>Enabling Pixate and Setting Your Pixate License
+## <a id="enabling-pixate-and-setting-your-pixate-license"></a>Enabling Pixate and Setting Your Pixate License
 
-To enable the Pixate Engine in your app, you'll need to set the styleMode of your app's window and call the Pixate initializer, passing it your license key and username.
+To enable Pixate in your app, you'll need to set the styleMode of your app's window and call the Pixate initializer, passing it your license key and username.
 
 Let's start with styleMode. Add an **#import** line at the top of your AppDelegate file:
 
-	#import <Pixate/Pixate.h>
+    #import <Pixate/Pixate.h>
 
 Then, right before **[self.window makeKeyAndVisible];**, add the following call:
 
-	self.window.styleMode = PXStylingNormal;
+    self.window.styleMode = PXStylingNormal;
 
 It should look something like this:
 
@@ -207,9 +206,9 @@ Now create a new file called **default.css** anywhere in your project
 
 In this default.css file, add the following:
 
-	#button1 {
-		background-color: yellow;
-	}
+    #button1 {
+        background-color: yellow;
+    }
 
 Now run your application. Your button should now have a yellow
 background!
@@ -218,13 +217,13 @@ background!
 
 Let's add a few more lines to the CSS file...
 
-	#button1 {
-    	background-color: yellow;
-    	border-width:     2px;
-    	border-color:     black;
-    	border-radius:    8px;
+    #button1 {
+        background-color: yellow;
+        border-width:     2px;
+        border-color:     black;
+        border-radius:    8px;
         border-style:     solid;
-	}
+    }
 
 And now run the app again. Now you have a nice black border and
 rounded corners!
@@ -235,13 +234,13 @@ You've just styled your first app using Pixate.  From here, try out
 the Playground on your iPad to experiment some more, or just keep
 changing the CSS and expand the styling of your app!
 
-## <a id="getting_started_video"></a>Getting Started Video
+## <a id="getting-started-video"></a>Getting Started Video
 
 There is also a short
 Getting Started video on our
 [YouTube channel](http://www.youtube.com/user/PixateInc). There are also a growing set of videos on our [Vimeo Channel](http://vimeopro.com/pixateinc/videos).
 
-## <a id="install_playground"></a>Install The Playground App
+## <a id="install-the-playground-app"></a>Install The Playground App
 
 The Playground app is an iPad app for experimenting with styling of
 native components using Pixate. The app is free and can be installed
@@ -259,11 +258,11 @@ will be styled as you change the CSS.  Click on *Button...* near the
 upper right corner of the app to select other types of controls to
 style.
 
-## <a id="sample_applications"></a>Sample Applications
+## <a id="sample-applications"></a>Sample Applications
 
 
 We've provided a few sample applications in the *Samples* folder for you to experiment with
-using Pixate.  You will require a licensed copy of Pixate Engine to compile these samples. Simply add your license name and serial number to the `Samples/License.h` before compiling these apps.
+using Pixate.  You will require a licensed copy of Pixate to compile these samples. Simply add your license name and serial number to the `Samples/License.h` before compiling these apps.
 
 
 * `PXCodeOnly` - demonstrates using Pixate with an app built without
@@ -273,24 +272,24 @@ using Pixate.  You will require a licensed copy of Pixate Engine to compile thes
 
 You can find the source code for our Playground app on the [Pixate Playground](https://github.com/Pixate/Playground) project on GitHub.
 
-## <a id="code_only"></a>Styling Using Code
+## <a id="styling-using-code"></a>Styling Using Code
 
 Setting **styleId**, **styleClass**, or **styleCSS** can be done in code rather than using Interface Builder. Doing so if very easy, just set those properties direclty on any UIView or derivative object. For example:
 
-	myButton.styleId = @“myButtonId”;
+    myButton.styleId = @“myButtonId”;
 
 **styleClass** can be set directly this way, too:
 
-	myButton1.styleClass = @“myButtons”;
-	myButton2.styleClass = @“myButtons”;
+    myButton1.styleClass = @“myButtons”;
+    myButton2.styleClass = @“myButtons”;
 
 Finally, you can even inline CSS directly in code:
 
-	myButton.styleCSS = @“background-image: linear-gradient(white, black);”;
+    myButton.styleCSS = @“background-image: linear-gradient(white, black);”;
 
 See the [API documentation](http://cdn.pixate.com/docs/engine/ios/latest/Pixate%20Engine%20for%20iOS%20Developer%20Reference.html) for more code-specific usage.
 
-## <a id="real-time_app_styling"></a>Real-time App Styling
+## <a id="real-time-app-styling"></a>Real-time App Styling
 
 Wouldn't it be great while developing your app to be able to
 re-style the app without needing to rebuild and redeploy it to the
@@ -298,7 +297,7 @@ simulator?  Visit our video on [Pixate Real Time CSS]
 (http://www.youtube.com/watch?v=rjNrNIyEL_c&feature=plcp) to learn how
 to configure your app to make use of this feature.
 
-## <a id="resources"></a>Pixate Resources
+## <a id="pixate-resources"></a>Pixate Resources
 
 The [Document Center](<http://www.pixate.com/documentation.html>) contains
 the reference guides and how-to articles.
