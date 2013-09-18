@@ -1,0 +1,9 @@
+* The Playground app is an open-source project available
+at https://github.com/Pixate/Playground.
+
+* The source code is made available under a modified BSD license.
+See LICENSE for full details.
+
+* Please note that in order to run the samples in this directory,
+you will need to enter a valid license key in the License.h file
+located in this directory.
