@@ -95,7 +95,7 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import <Pixate/UIView+PXStyling.h>
-#import <Pixate/Pixate.h>
+#import <Pixate/PXEngine.h>
 
 @implementation CollectionViewController
 
@@ -148,7 +148,7 @@
         }
         
         //[self.collectionView updateStyles];
-        //[Pixate applyStylesheets];
+        //[PXEngine applyStylesheets];
     }
 }
 

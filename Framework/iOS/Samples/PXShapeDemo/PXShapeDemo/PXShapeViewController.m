@@ -14,7 +14,7 @@
     CGFloat startingRotation;
     CGFloat startingScale;
     NSArray *images;
-    int imageIndex;
+    NSUInteger imageIndex;
 }
 
 - (void)loadView

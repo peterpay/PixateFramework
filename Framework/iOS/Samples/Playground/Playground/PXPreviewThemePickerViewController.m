@@ -7,7 +7,7 @@
 //
 
 #import "PXPreviewThemePickerViewController.h"
-#import <Pixate/Pixate.h>
+#import <Pixate/PXEngine.h>
 
 @implementation PXPreviewThemePickerViewController
 {
@@ -64,8 +64,6 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        cell.textLabel.textColor = [UIColor lightTextColor];
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
         cell.styleClass = @"themePickerCell";
     }
 

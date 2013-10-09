@@ -14,3 +14,12 @@
     border-width    : 1px;
     border-color    : rgb(192,193,194);
 }
+
+@media (device-os-version: '7') {
+    #previewView {
+        top           : 90px;
+    }
+    #textView {
+        top           : 90px;
+    }
+}

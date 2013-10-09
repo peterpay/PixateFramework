@@ -8,7 +8,7 @@
 
 #import "VectorGraphicsPreview.h"
 #import "VectorGraphicsController.h"
-#import <Pixate/Pixate.h>
+#import <Pixate/PXEngine.h>
 
 @implementation VectorGraphicsPreview
 {

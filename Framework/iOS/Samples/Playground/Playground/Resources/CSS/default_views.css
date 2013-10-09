@@ -7,11 +7,22 @@
     border-radius    : 5px;
 	border-width     : 1px;
     border-color     : rgb(92,93,94);
+    border-style     : solid;
 }
 
 #textView {
-    background-color : none;
+    background-color : transparent;
     border-radius    : 5px;
     border-width     : 1px;
     border-color     : rgb(92,93,94);
+    border-style     : solid;
+}
+
+@media (device-os-version: '7') {
+    #previewView {
+        top           : 90px;
+    }
+    #textView {
+        top           : 90px;
+    }
 }

@@ -8,10 +8,10 @@
 
 #import "PXAppDelegate.h"
 #import "PXViewController.h"
-#import <Pixate/Pixate.h>
+#import <Pixate/PXEngine.h>
 #import "iConsole.h"
 #import "iNotify.h"
-#import "../../License.h"
+//#import "../../License.h"
 
 @implementation PXAppDelegate
 
@@ -40,8 +40,8 @@
                          [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     [[NSUserDefaults standardUserDefaults] setValue:version forKey:@"playground_version"];
 
-    [Pixate licenseKey:@PX_LICENSE_KEY forUser:@PX_LICENSE_USER];
-
+    self.window.styleMode = PXStylingNormal;
+    
     [self.window makeKeyAndVisible];
 
     return YES;

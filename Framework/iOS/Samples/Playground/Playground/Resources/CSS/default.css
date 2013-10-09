@@ -28,6 +28,16 @@ pixate-config {
     separator-style  : none;
 }
 
+.themePickerCell text-label {
+    color            : rgb(134,135,136);
+    font-family      : "Helvetica";
+    font-size        : 12;
+}
+
+.themePickerCell text-label:highlighted {
+    color            : black;
+}
+
 #shareButton {
     border-radius    : 3px;
 }
@@ -44,4 +54,19 @@ pixate-config {
     background-image : url(gear.svg);
     top   : 15px;
     size  : 24px 24px;
+}
+
+@media (device-os-version: '7') {
+    #topBanner {
+        height           : 75px;
+    }
+    #themeSelectButton {
+        top           : 25px;
+    }
+    #prefsButton {
+        top           : 35px;
+    }
+    #pixateLogo {
+        top           : 20px;
+    }
 }

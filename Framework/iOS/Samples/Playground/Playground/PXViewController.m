@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pixate, Inc. All rights reserved.
 //
 
-#import <Pixate/Pixate.h>
+#import <Pixate/PXEngine.h>
 #import <QuartzCore/QuartzCore.h>
 #import "PXViewController.h"
 #import "PXPreviewCustomClassProtocol.h"
@@ -179,14 +179,20 @@
 -(void)saveImageForCurrentIndex:(NSNumber *)index
 {
     int i = index.intValue;
-
+    NSString *osVersion = @"";
+    
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7"))
+    {
+        osVersion = @"7";
+    }
+    
     // Retina
-    NSString *name = [NSString stringWithFormat:@"%@_%@@2x", [self imagePrefix], previewSorted_[i]];
+    NSString *name = [NSString stringWithFormat:@"%@_%@%@@2x", [self imagePrefix], previewSorted_[i], osVersion];
     UIImage *screenShot = [self getCurrentScreenshotInSize:CGSizeMake(PREVIEW_WIDTH, PREVIEW_HEIGHT)];
     [self saveImage:name withImage:screenShot];
 
     // Non-retina
-    name = [NSString stringWithFormat:@"%@_%@", [self imagePrefix], previewSorted_[i]];
+    name = [NSString stringWithFormat:@"%@_%@%@", [self imagePrefix], previewSorted_[i], osVersion];
     screenShot = [self getCurrentScreenshotInSize:CGSizeMake(PREVIEW_WIDTH/2.0f, PREVIEW_HEIGHT/2.0f)];
     [self saveImage:name withImage:screenShot];
 
@@ -288,7 +294,7 @@
 
 - (void)applyStyle:(NSString *)css
 {
-    PXStylesheet *sheet = [Pixate styleSheetFromSource:css
+    PXStylesheet *sheet = [PXEngine styleSheetFromSource:css
                                                   withOrigin:PXStylesheetOriginUser];
     
     // show or clear any errors
@@ -311,16 +317,16 @@
 {
     if(lightMode)
     {
-        [Pixate styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:@"light" ofType:@"css"]
+        [PXEngine styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:@"light" ofType:@"css"]
                                    withOrigin:PXStylesheetOriginApplication];
     }
     else
     {
-        [Pixate styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:@"default" ofType:@"css"]
+        [PXEngine styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:@"default" ofType:@"css"]
                                    withOrigin:PXStylesheetOriginApplication];
     }
 
-    [Pixate applyStylesheets];
+    [PXEngine applyStylesheets];
 }
 
 #pragma mark - Send email button action handler
@@ -688,7 +694,14 @@
 
 - (UIImage *)loadImage:(NSString *)name
 {
-    NSString *resourceName = [NSString stringWithFormat:@"%@_%@", [self imagePrefix], name];
+    NSString *osVersion = @"";
+    
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7"))
+    {
+        osVersion = @"7";
+    }
+
+    NSString *resourceName = [NSString stringWithFormat:@"%@_%@%@", [self imagePrefix], name, osVersion];
     UIImage *img = [UIImage imageNamed:resourceName];
     return img;
 }
