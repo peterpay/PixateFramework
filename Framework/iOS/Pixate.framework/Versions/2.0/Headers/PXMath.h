@@ -18,12 +18,14 @@
 #define TAN(t) tan(t)
 #define ATAN2(y,x) atan2(y,x)
 #define SQRT(n) sqrt(n)
+#define EXP(n) exp(n)
 #else
 #define SIN(t) sinf(t)
 #define COS(t) cosf(t)
 #define TAN(t) tanf(t)
 #define ATAN2(y,x) atan2f(y,x)
 #define SQRT(n) sqrtf(n)
+#define EXP(n) expf(n)
 #endif
 
 #endif

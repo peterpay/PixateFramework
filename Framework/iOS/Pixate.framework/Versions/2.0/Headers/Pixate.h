@@ -15,6 +15,7 @@
 #import "NSDictionary+PXCSSEncoding.h"
 #import "UIBarButtonItem+PXStyling.h"
 #import "UITabBarItem+PXStyling.h"
+#import "UINavigationItem+PXStyling.h"
 #import "UIColor+PXColors.h"
 
 /**
@@ -23,7 +24,7 @@
 @interface Pixate : NSObject
 
 /**
- * The build date of this version of the Pixate Engine
+ * The version number of the Pixate Engine
  */
 + (NSString *)version;
 
@@ -31,6 +32,11 @@
  * The build date of this version of the Pixate Engine
  */
 + (NSDate *)buildDate;
+
+/**
+ * The api integer version of the API
+ */
++ (int)apiVersion;
 
 /**
  * The email address used for licensing

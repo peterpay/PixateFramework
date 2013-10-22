@@ -25,7 +25,7 @@
  *  - PXFillStyler
  *  - PXBorderStyler
  *  - PXBoxShadowStyler
- *  - -ios-rendering-mode: original | template | automatic (iOS7 only)
+ *  - -ios-rendering-mode: original | template | automatic // iOS7 or later
  *
  *  UIBarButtonItem supports the following properties:
  *
