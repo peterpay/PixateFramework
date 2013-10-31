@@ -8,6 +8,7 @@
 
 #import "PXShapeViewController.h"
 #import <Pixate/PXGraphics.h>
+#import <Pixate/Pixate.h>
 
 @implementation PXShapeViewController
 {
@@ -19,6 +20,10 @@
 
 - (void)loadView
 {
+    // turn on logging to console
+    Pixate.configuration.parseErrorDestination = PXParseErrorDestinationConsole;
+
+    // create view
     PXShapeView *view = [[PXShapeView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     // setup gestures

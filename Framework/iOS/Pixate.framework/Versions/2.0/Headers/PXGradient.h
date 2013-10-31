@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "PXPaint.h"
 
+typedef enum {
+    PXGradientUnitsBoundingBox,
+    PXGradientUnitsUserSpace
+} PXGradientUnits;
+
 /**
  *  A common base class for linear- and radial-gradients.
  */
@@ -25,6 +30,11 @@
  *  inclusive.
  */
 @property (nonatomic) NSMutableArray *colors;
+
+/**
+ *  Specify if points for the gradient are in user coordinates of if they are relative to the bounding box
+ */
+@property (nonatomic) PXGradientUnits gradientUnits;
 
 /**
  *  The transform to apply before rendering this gradient

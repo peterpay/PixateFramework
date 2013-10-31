@@ -11,6 +11,7 @@
 
 #define DEGREES_TO_RADIANS(angle)   ( (angle)  / 180.0 * M_PI)
 #define RADIANS_TO_DEGREES(radians) ((radians) * 180.0 / M_PI)
+#define TWO_PI (2.0 * M_PI)
 
 #if CGFLOAT_IS_DOUBLE
 #define SIN(t) sin(t)
@@ -19,6 +20,7 @@
 #define ATAN2(y,x) atan2(y,x)
 #define SQRT(n) sqrt(n)
 #define EXP(n) exp(n)
+#define FLOOR(n) floor(n)
 #else
 #define SIN(t) sinf(t)
 #define COS(t) cosf(t)
@@ -26,6 +28,7 @@
 #define ATAN2(y,x) atan2f(y,x)
 #define SQRT(n) sqrtf(n)
 #define EXP(n) expf(n)
+#define FLOOR(n) floorf(n)
 #endif
 
 #endif

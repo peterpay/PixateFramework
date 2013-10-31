@@ -8,8 +8,8 @@
 
 #import "PXAppDelegate.h"
 #import "PXShapeViewController.h"
-//#import <Pixate/Pixate.h>
-//#import "../../License.h"
+#import <Pixate/Pixate.h>
+#import "../../License.h"
 
 @implementation PXAppDelegate
 
@@ -25,7 +25,7 @@
     self.window.rootViewController = controller;
 
     // Set licensing information for Pixate Engine
-    //[Pixate licenseKey:@"LICENSE_SERIAL" forUser:@"LICENSE_EMAIL"];
+    [Pixate licenseKey:@PX_LICENSE_KEY forUser:@PX_LICENSE_USER];
 
     [self.window makeKeyAndVisible];
     return YES;

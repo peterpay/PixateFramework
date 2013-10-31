@@ -117,6 +117,14 @@ typedef enum
 @property (readonly, nonatomic, copy) NSString *defaultPseudoClass;
 
 /**
+ *  Return a boolean indicating if the styleable is able to style the specified pseudoClass. This is particularly
+ *  helpful with styleables that define pseudo-states (for example, UITextField) where the styleable can only have a
+ *  a given pseudoClass (state) applied to it if it is on that state already. Instances that do not implement this
+ *  method will be assume this method was called and it returned YES
+ */
+- (BOOL) canStylePseudoClass:(NSString *)pseudoClass;
+
+/**
  *  Return a list of pseudo-elements that are recognized by this object
  */
 @property (readonly, nonatomic, copy) NSArray *supportedPseudoElements;
