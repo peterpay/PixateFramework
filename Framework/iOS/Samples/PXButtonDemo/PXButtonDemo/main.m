@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-    	[Pixate licenseKey:@"YOUR LICENSE KEY" forUser:@"YOUR USER NAME"];
+    	[Pixate licenseKey:@PX_LICENSE_KEY forUser:@PX_LICENSE_USER];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([PXAppDelegate class]));
     }
 }
